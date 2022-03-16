@@ -8,7 +8,7 @@ public class Calculator {
     BinaryOperator<Integer> plus = (x, y) -> x + y;
     BinaryOperator<Integer> minus = (x, y) -> x - y;
     BinaryOperator<Integer> multiply = (x, y) -> x * y;
-    BinaryOperator<Integer> devide = (x, y) -> x / y; //Возможно деление на ноль. Лучше использовать тернарный оператор (y != 0 ? x / y : 0), либо try-catch
+    BinaryOperator<Integer> devide = (x, y) -> y != 0 ? x / y : 0; //Возможно деление на ноль при написании x / y. Лучше использовать данный тернарный оператор, либо try-catch
 
     UnaryOperator<Integer> pow = x -> x * x;
     UnaryOperator<Integer> abs = x -> x > 0 ? x : x * -1;
